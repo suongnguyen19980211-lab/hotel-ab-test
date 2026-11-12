@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STAY BLUE | Deluxe King Room</title>
+<style>
+:root{--navy:#183653;--blue:#2468d8;--ink:#243246;--muted:#68778a;--line:#e5eaf0;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg)}
+header{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,22px)}
+.logo{font-weight:800;letter-spacing:2px;color:var(--navy);font-size:22px}.nav{color:var(--muted);font-size:14px}
+main{max-width:1080px;margin:42px auto;padding:0 22px}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:20px}
+h1{font-size:30px;margin:0 0 8px;color:var(--navy)}.sub{color:var(--muted);margin:0 0 26px}
+.layout{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
+.photo{height:350px;border-radius:16px;background:linear-gradient(135deg,#c8d9e9,#8ba7bd);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.room-art{width:78%;height:62%;background:#f6f1e8;border-radius:12px;box-shadow:0 18px 35px #3a536433;position:relative}
+.bed{position:absolute;left:12%;right:12%;bottom:13%;height:43%;background:#fff;border-radius:10px 10px 4px 4px;box-shadow:0 7px 0 #d6dce2}
+.pillow{position:absolute;top:15%;left:17%;width:25%;height:23%;background:#e8edf1;border-radius:8px}.pillow.two{left:47%}
+.window{position:absolute;right:12%;top:12%;width:24%;height:43%;background:#a9c8d9;border:8px solid #fff;border-radius:5px}
+.photo-label{position:absolute;left:18px;bottom:16px;background:#fffE;color:var(--navy);padding:8px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 8px 28px #2432460a}
+.price{font-size:27px;font-weight:800;color:var(--navy);margin:12px 0 4px}.price small{font-size:14px;font-weight:400;color:var(--muted)}
+.room-title{font-size:20px;font-weight:700}.tag{display:inline-block;background:#edf4ff;color:#245da8;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.features{list-style:none;padding:0;margin:22px 0}.features li{margin:12px 0;color:#3d5268;font-size:14px}.check{color:#1b9a68;font-weight:bold;margin-right:8px}
+.notice{padding:12px 14px;background:#edf8f2;color:#23724f;border-radius:9px;font-size:13px;font-weight:700;margin:16px 0}
+.cta{width:100%;border:0;border-radius:9px;background:var(--blue);color:#fff;font-size:16px;font-weight:700;padding:15px;cursor:pointer}
+.small{font-size:12px;color:var(--muted);line-height:1.6;margin-top:14px}
+footer{text-align:center;color:#8491a0;font-size:12px;padding:34px 15px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.photo{height:250px}main{margin:26px auto}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<header><div class="logo">STAY BLUE</div><div class="nav">호텔 예약 · 객실 안내 · 고객센터</div></header>
+<main>
+<div class="crumb">홈　›　서울　›　객실 선택</div>
+<h1>편안한 휴식을 위한 특별한 객실</h1>
+<p class="sub">서울 도심에서 즐기는 여유로운 하루</p>
+<div class="layout">
+<section>
+<div class="photo" role="img" aria-label="호텔 객실 일러스트">
+  <div class="room-art"><div class="window"></div><div class="pillow"></div><div class="pillow two"></div><div class="bed"></div></div>
+  <div class="photo-label">실습용 객실 이미지</div>
+</div>
+<div class="card" style="margin-top:20px">
+ <div class="room-title">Deluxe King Room</div>
+ <p class="small">킹사이즈 침대 · 2인 기준 · 금연 객실</p>
+ <ul class="features">
+  <li><span class="check">✓</span>무료 Wi-Fi</li>
+  <li><span class="check">✓</span>조식 옵션 선택 가능</li>
+  <li><span class="check">✓</span>편안한 킹사이즈 침대</li>
+ </ul>
+</div>
+</section>
+<aside class="card">
+ <span class="tag">추천 객실</span>
+ <div class="room-title" style="margin-top:15px">Deluxe King Room</div>
+ <div class="price">₩120,000 <small>/ 1박</small></div>
+ <div class="notice" id="experiment-message">✓ 무료 취소 가능　·　✓ 나중에 결제 가능</div>
+ <button class="cta" id="booking-button">예약하기</button>
+ <p class="small">본 페이지는 A/B 테스트 수업을 위한 가상 호텔 예약 데모입니다. 실제 예약이나 결제는 진행되지 않습니다.</p>
+ <p class="small" id="booking-feedback" aria-live="polite"></p>
+</aside>
+</div>
+</main>
+<footer>STAY BLUE · A/B 테스트 실습용 데모 웹사이트</footer>
+<script>
+document.getElementById('booking-button').addEventListener('click', function(){
+  document.getElementById('booking-feedback').textContent='실습용 데모입니다. 예약은 진행되지 않았습니다.';
+});
+</script>
+</body>
+</html>
